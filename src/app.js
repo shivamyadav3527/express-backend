@@ -13,5 +13,14 @@ app.use(express.urlencoded({extended: true, limit: "16kb"})) //for getting the d
 app.use(express.static("public"))
 app.use(cookieParser())
 
+import userRoutes from "./routes/user.routes.js"
+
+app.use("/api/v1/users", userRoutes)
+app.get('/set-cookie', (req, res) => {
+    res.cookie('user', 'JohnDoe', { httpOnly: true }); // Set a cookie named 'user'
+    res.send('Cookie has been set!');
+  });
+  
+
 
 export { app }
