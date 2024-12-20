@@ -5,7 +5,6 @@ dotenv.config({
     path: './env'
 })
 
-
 connectDB()
 
 const PORT = process.env.PORT || 8000; // Default to 8000 if no PORT is set
